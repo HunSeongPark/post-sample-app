@@ -1,7 +1,6 @@
 package com.hunseong.postsample.repository;
 
 import com.hunseong.postsample.entity.Comment;
-import com.hunseong.postsample.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
