@@ -1,5 +1,6 @@
 package hunseong.com.post_practice.screen.post
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,6 +8,7 @@ import hunseong.com.post_practice.data.repository.PostRepository
 import hunseong.com.post_practice.util.SingleLiveEvent
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -39,6 +41,13 @@ class PostViewModel @Inject constructor(
             }
             .subscribe(_items::setValue, errorEvent::setValue)
         )
+    }
+
+    fun createPost() {
+        compositeDisposable.add(postRepository.createPosts()
+            .subscribe({}, {})
+        )
+        loadPost()
     }
 
     override fun onCleared() {

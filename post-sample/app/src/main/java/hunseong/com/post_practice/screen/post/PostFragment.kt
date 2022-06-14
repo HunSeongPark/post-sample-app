@@ -59,6 +59,9 @@ class PostFragment : DaggerFragment() {
             })
             binding.postRecyclerView.adapter = adapter
         }
+        binding.postFab.setOnClickListener {
+            postViewModel.createPost()
+        }
         binding.postViewModel = postViewModel
         binding.lifecycleOwner = viewLifecycleOwner
     }
