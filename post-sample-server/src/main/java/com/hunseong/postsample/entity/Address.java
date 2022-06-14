@@ -1,5 +1,7 @@
 package com.hunseong.postsample.entity;
 
+import lombok.AllArgsConstructor;
+
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 

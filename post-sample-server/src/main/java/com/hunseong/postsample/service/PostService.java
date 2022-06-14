@@ -4,6 +4,7 @@ import com.hunseong.postsample.entity.dto.PostResponse;
 import com.hunseong.postsample.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Hunseong on 2022/06/14
  */
+@Transactional
 @RequiredArgsConstructor
 @Service
 public class PostService {
