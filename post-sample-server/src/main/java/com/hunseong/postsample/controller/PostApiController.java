@@ -4,6 +4,7 @@ import com.hunseong.postsample.entity.dto.PostRequest;
 import com.hunseong.postsample.entity.dto.PostResponse;
 import com.hunseong.postsample.service.PostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class PostApiController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createPost(@RequestBody PostRequest requestDto) {
+    public ResponseEntity<Void> createPost(PostRequest requestDto) {
         postService.create(requestDto);
         return ResponseEntity.ok().build();
     }
