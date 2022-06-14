@@ -1,11 +1,11 @@
 package com.hunseong.postsample.controller;
 
+import com.hunseong.postsample.entity.dto.PostRequest;
 import com.hunseong.postsample.entity.dto.PostResponse;
 import com.hunseong.postsample.service.PostService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +22,11 @@ public class PostApiController {
     @GetMapping
     public List<PostResponse> getPosts() {
         return postService.getPosts();
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> createPost(@RequestBody PostRequest requestDto) {
+        postService.create(requestDto);
+        return ResponseEntity.ok().build();
     }
 }
