@@ -23,6 +23,7 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
+    @Transactional(readOnly = true)
     public List<PostResponse> getPosts() {
         return postRepository.findAll()
                 .stream()

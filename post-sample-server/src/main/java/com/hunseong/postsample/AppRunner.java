@@ -8,11 +8,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by Hunseong on 2022/06/14
  */
+@Profile("!test")
 @RequiredArgsConstructor
 @Component
 public class AppRunner implements ApplicationRunner {
